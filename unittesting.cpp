@@ -1,6 +1,6 @@
 #include "dtw.h"
 
-void testmaxmin() {
+int testmaxmin() {
 	vector<double> x;
 	x.push_back(1);
 	x.push_back(2);
@@ -23,11 +23,13 @@ void testmaxmin() {
 		for(uint k = 0; k<x.size();++k)
 		  cout<<"k="<<k<<" "<<x[k]<<" "<< U[k]<<" "<< L[k]<<" " <<U2[k]<<" "<< L2[k]<<endl;
 		}
+		return -1;
 	}
+	return 0;
 	
 }
 
-void testdtw() {
+int testdtw() {
 	vector<double> x;
 	x.push_back(1);
 	x.push_back(2);
@@ -43,12 +45,21 @@ void testdtw() {
 	  y.push_back(x[k]+15);
 	dtw mDTW(x.size(),1);
 	double fd = mDTW.fastdynamic(x,y);
-	if(fd!=l1diff(x,y)) cerr<<"bug"<<endl;
+	if(fd!=l1diff(x,y)) {
+		cerr<<"bug"<<endl;
+		return -1;
+	}
+	return 0;
 }
 
 
 int main() {
-	testmaxmin();
-	testdtw();
-	return 0;
+	int r = 0;
+	r = testmaxmin();
+	r = testdtw();
+	if(r >= 0)
+	    cout << "Code looks ok." << endl;
+	else
+		cout <<"Bug detected" << endl;
+	return r;
 }

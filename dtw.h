@@ -19,6 +19,7 @@
 #include<algorithm>
 #include<cmath>
 #include <deque>
+#include <cassert>
 #include <sstream>
 
 typedef double floattype;
@@ -77,7 +78,6 @@ static inline double min (double x, double y ) { return x < y ? x : y;}
 
     static inline double dynamic(const vector<double> &  v, const vector<double> & w, 
       int constraint=INF, int p=2) {
-      	//cout<<"dtw "<<constraint<<" "<<v.size()<<" "<<w.size()<<" "<<p<<endl;
       	assert(v.size() == w.size());
         int n ( v.size() );
         vector<vector<double> > gamma(n, vector<double>(n,0.0));
@@ -159,7 +159,7 @@ class NearestNeighbor {
 class NaiveNearestNeighbor :  public NearestNeighbor {
 	public:
 	NaiveNearestNeighbor(const vector<double> &  v, int constraint) : NearestNeighbor(v,constraint), lb_keogh(0),full_dtw(0),
-	 V(v), mConstraint(constraint),  
+	 V(v),
 	bestsofar(dtw::INF) {
 	}
 	
@@ -187,8 +187,7 @@ class NaiveNearestNeighbor :  public NearestNeighbor {
 	int lb_keogh;
 	int full_dtw;
 	
-	const vector<double>   V; 
-	int mConstraint;
+	const vector<double>   V;
 	double bestsofar;
 	
 };
