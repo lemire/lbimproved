@@ -17,7 +17,9 @@ http://arxiv.org/abs/0811.3301
 
 Comments about this paper by Keogh's team: 
 
-       To our knowledge, there is only one paper that offers a plausible speedup based on a tighter lower bound—Lemire (2009) suggests a mean speedup of about 1.4 based on a tighter bound. These results are reproducible, and testing on more general data sets we obtained similar results (...) (Wang et al. 2013)
+     To our knowledge, there is only one paper that offers a plausible speedup based on a tighter 
+     lower bound—Lemire (2009) suggests a mean speedup of about 1.4 based on a tighter bound. 
+     These results are reproducible, and testing on more general data sets we obtained similar results (...) (Wang et al. 2013)
 
 
 # BUILD 
