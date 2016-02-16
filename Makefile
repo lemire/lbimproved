@@ -5,10 +5,10 @@ package:
 	zip -9 lbimproved_`date +%Y-%m-%d`.zip dtw.h Makefile rtreebased.h querystrategy.h unitesting.py timeseries.i unittesting.cpp README data/*py data/READ*
 
 benchmark: benchmark.cpp dtw.h 
-	g++ -O2 -Wall -Wold-style-cast  -Woverloaded-virtual -o benchmark benchmark.cpp
+	$(CXX) -O2 -Wall -Wold-style-cast  -Woverloaded-virtual -o benchmark benchmark.cpp
 
 unittesting: unittesting.cpp dtw.h 
-	g++ -g3 -Wall -Wold-style-cast  -Woverloaded-virtual -o unittesting unittesting.cpp
+	$(CXX) -g3 -Wall -Wold-style-cast  -Woverloaded-virtual -o unittesting unittesting.cpp
 
 
 clean :
