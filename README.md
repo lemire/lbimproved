@@ -1,4 +1,5 @@
 # LBImproved C++ Library
+[![Build Status](https://travis-ci.org/lemire/lbimproved.png)](https://travis-ci.org/lemire/lbimproved)
 
 This library comes in the form of one short C++ header file. The documentation
 is in the C++ comments and in this file.
