@@ -34,3 +34,9 @@ type "make"
     make
     ./unittesting
     ./benchmark
+    ./example
+
+# Simple code example
+
+See ``example.cpp``.
+
