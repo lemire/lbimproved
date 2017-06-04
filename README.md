@@ -40,3 +40,6 @@ type "make"
 
 See ``example.cpp``.
 
+# Other libraries
+ 
+*  [dtwclust](https://github.com/asardaes/dtwclust) is an  R Package for Time Series Clustering Along with Optimizations for DTW
