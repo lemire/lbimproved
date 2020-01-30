@@ -244,11 +244,10 @@ public:
       else if (candidate[i] < L[i])
         error += L[i] - candidate[i];
     }
-    // cout << "lb keogh = "<<error<<endl;
     if (error < bestsofar) {
       ++full_dtw;
       const double trueerror =
-          mDTW.fastdynamic(V, candidate); //,mConstraint,1);
+          mDTW.fastdynamic(V, candidate); 
       if (trueerror < bestsofar)
         bestsofar = trueerror;
     }
@@ -372,9 +371,6 @@ public:
   }
 
   double test(const vector<double> &candidate) {
-    // memcpy(&buffer[0], &candidate[0],buffer.size()*sizeof(double));// =
-    // candidate; buffer = candidate; vector<double> & buffer(candidate);// no
-    // need for a copy
     ++lb_keogh;
     double error(0.0);
     for (uint i = 0; i < V.size(); ++i) {
@@ -388,7 +384,6 @@ public:
     }
     if (error < bestsofar) {
       computeEnvelope(buffer, mConstraint, U2, L2);
-      // env.compute(buffer,mConstraint,U2,L2);
       for (uint i = 0; i < V.size(); ++i) {
         if (V[i] > U2[i]) {
           error += V[i] - U2[i];
@@ -411,10 +406,7 @@ public:
    * for plotting purposes
    */
   string dumpTextDescriptor(const vector<double> &candidate) {
-    // memcpy(&buffer[0], &candidate[0],buffer.size()*sizeof(double));// =
-    // candidate;
     buffer = candidate;
-    // vector<double> & buffer(candidate);// no need for a copy
     ++lb_keogh;
     double error(0.0);
     for (uint i = 0; i < V.size(); ++i) {
@@ -450,9 +442,6 @@ public:
          << lbimprovedarray[k] << " " << L[k] << " " << U[k] << " " << L2[k]
          << " " << U2[k] << endl;
     }
-    // string ans;
-    // ss>>ans;
-    /// cout<<ss.str()<<endl;
     return ss.str();
   }
 
@@ -492,9 +481,6 @@ public:
   }
 
   double test(const vector<double> &candidate) {
-    // memcpy(&buffer[0], &candidate[0],buffer.size()*sizeof(double));// =
-    // candidate; buffer = candidate; vector<double> & buffer(candidate);// no
-    // need for a copy
     ++lb_keogh;
     double error(0.0);
     for (uint i = 0; i < V.size(); ++i) {
@@ -510,7 +496,6 @@ public:
     }
     if (error < bestsofar) {
       computeEnvelope(buffer, mConstraint, U2, L2);
-      // env.compute(buffer,mConstraint,U2,L2);
       for (uint i = 0; i < V.size(); ++i) {
         if (V[i] > U2[i]) {
           error += V[i] - U2[i];
@@ -556,9 +541,7 @@ void piecewiseSumReduction(const vector<floattype> &array,
   assert(out.size() > 0);
   const uint sizeofpieces = array.size() / out.size();
   assert(sizeofpieces > 0);
-  // sum_up<floattype> s;
   for (uint k = 0; k < out.size() - 1; ++k) {
-    // s.reset();
     out[k] = 0;
     for (uint j = k * sizeofpieces; j < (k + 1) * sizeofpieces; ++j)
       out[k] += array[j];
