@@ -138,8 +138,10 @@ void computeEnvelope(const vector<floattype> & array, uint constraint, vector<fl
          else if(i==  width+minfifo.front()) minfifo.pop_front();
         }
         for(uint i = array.size(); i <= array.size() + constraint; ++i) {
+          if(i >=constraint+1) {
           	maxvalues[i-constraint-1] = array[maxfifo.front()];
           	minvalues[i-constraint-1] = array[minfifo.front()];
+	  }
           	if(i-maxfifo.front() >= width) maxfifo.pop_front();
           	if(i-minfifo.front() >= width) minfifo.pop_front();
         }
