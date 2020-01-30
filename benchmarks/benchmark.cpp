@@ -28,8 +28,8 @@ vector<double> getcin() {
 }
 
 template <class NN>
-vector<uint> RunMe(vector<vector<double>> &collection,
-                   vector<vector<double>> &testcollection) {
+vector<uint> RunMe(vector<vector<double> > &collection,
+                   vector<vector<double> > &testcollection) {
   vector<uint> bestmatches;
   clock_t start, finish;
   start = clock();
@@ -57,8 +57,8 @@ vector<uint> RunMe(vector<vector<double>> &collection,
 
 void runbenchmark() {
   uint N = 128;
-  vector<vector<double>> collection;
-  vector<vector<double>> testcollection;
+  vector<vector<double> > collection;
+  vector<vector<double> > testcollection;
 
   for (uint i = 0; i < 512; ++i) {
     collection.push_back(getrandomwalk(N));

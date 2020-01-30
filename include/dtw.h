@@ -75,7 +75,7 @@ public:
     return mGamma[mN - 1][mN - 1];
   }
 
-  vector<vector<double>> mGamma;
+  vector<vector<double> > mGamma;
 
   int mN, mConstraint;
 
@@ -83,7 +83,7 @@ public:
                                int constraint = INF, int p = 2) {
     assert(v.size() == w.size());
     int n(v.size());
-    vector<vector<double>> gamma(n, vector<double>(n, 0.0));
+    vector<vector<double> > gamma(n, vector<double>(n, 0.0));
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < n; ++j) {
         if (abs(i - j) > constraint) {
